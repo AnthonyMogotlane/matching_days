@@ -1,3 +1,91 @@
+/* default style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+li {
+    list-style: none;
+}
+
+/* nav bar style */
+.nav-bar {
+    background: burlywood;
+    width: 100%;
+    height: 8vh;
+}
+
+.nav-bar h1 {
+    font-size: 2em;
+}
+
+/* content styling */
+.content-row {
+    height: 100%;
+}
+
+.days-container li {
+    border: 1px solid #000;
+    height: 50px;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+/* date input style */
+.date-containers {
+    row-gap: 1em;
+    font-weight: 600;
+}
+
+#first-date {
+    height: 2.5em;
+}
+
+#second-date {
+    margin-top: 2px;
+    height: 2.5em;
+}
+
+
+/* days background colors */
+.purple {
+    background: purple;
+}
+
 .red {
     background: red;
+}
+
+.green {
+    background: green;
+}
+
+
+/* Media Query */
+@media screen and (min-width: 760px) {
+
+    .content-row {
+        flex-direction: column !important;
+        row-gap: 3em;
+    }
+
+    .days-container {
+        margin-top: 4em;
+        flex-direction: row !important;
+    }
+
+    .days-container li {
+        width: 200px;
+    }
+
+    .date-containers {
+        margin: auto;
+        width: 100%;
+        display: none;
+    }
 }

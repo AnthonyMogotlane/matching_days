@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,19 @@
     <link rel="stylesheet" href="css/simple-grid.css">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-6-sm">
-                <ul class="days-container"></ul>
+    <div class="row">
+        <div class="col-12 nav-bar flex column justify-center align-center">
+            <h1>Matching Days</h1>
+        </div>
+    </div>
+    <div class="container content-container">
+        <div class="row content-row flex justify-center">
+            <div class="col-6-sm col-12">
+                <ul class="days-container flex column justify-center"></ul>
             </div>
-            <div class="col-6-sm">
+            <div class="col-6-sm col-12 date-containers flex column">
                 <div class="first-date-container">
                     <label for="first-date">First Date:</label>
                     <input type="date" id="first-date">
@@ -27,17 +34,14 @@
             </div>
         </div>
     </div>
-    
+
     <script type="text/x-handlebars-template" class="days-content">
-        {{{color monday}}}
-        <li>{{{color tuesday}}}</li>
-        <li>{{{color wednesday}}}</li>
-        <li>{{{color thursday}}}</li>
-        <li>{{{color friday}}}</li>
-        <li>{{{color saturday}}}</li>
-        <li>{{{color sunday}}}</li>
+        {{#each listOfDays}}
+            {{{color this}}}
+        {{/each}}
     </script>
     <script src="js/matchingDays.js"></script>
     <script src="js/matchingDays.dom.js"></script>
 </body>
+
 </html>
