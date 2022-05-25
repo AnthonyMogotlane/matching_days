@@ -8,7 +8,7 @@ const matchingDay = matchingDays();
 firstDate.addEventListener("change", () => {
     matchingDay.setFirstDate(firstDate.value);
     matchingDay.setSecondDate(secondDate.value);
-    console.log(matchingDay.getDayColors())
+
     weekDaysTemplate(matchingDay.getFirstDay(), matchingDay.getSecondDay(), matchingDay.getDayColors());
 })
 
@@ -20,17 +20,18 @@ secondDate.addEventListener("change", () => {
 })
 
 function weekDaysTemplate(theDayOne, theDayTwo, theColors) {
+    let theColor = theColors;
+    let styleClass = "flex column justify-center align-center"
     // compile the template
     let daysTemplate = document.querySelector(".days-content").innerHTML;
-    let theColor = theColors;
     // custom helper for color behavior
-    Handlebars.registerHelper('color', str =>  { 
-        if(str === theDayOne) {
-            return `<li class="${theColor[0]} ${theColor}">${str}</li>`;
+    Handlebars.registerHelper('color', str => {
+        if (str === theDayOne) {
+            return `<li class="${theColor[0]} ${theColor} ${styleClass}">${str}</li>`;
         } else if (str === theDayTwo) {
-            return `<li class=${theColor[1]} ${theColor}>${str}</li>`;
+            return `<li class="${theColor[1]} ${theColor} ${styleClass}" >${str}</li>`;
         } else {
-            return `<li>${str}</li>`;
+            return `<li class="${styleClass}">${str}</li>`;
         }
     })
     //template function
