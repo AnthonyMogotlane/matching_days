@@ -67,7 +67,7 @@ describe("The matchingDays function", () => {
 
         it("should return 'true' if the days of the input dates are matching", () => {
             let test = matchingDays();
-            
+
             test.setFirstDate("21-05-2022")
             test.setSecondDate("11-12-2010");
 
