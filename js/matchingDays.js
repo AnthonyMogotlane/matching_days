@@ -34,7 +34,7 @@ const matchingDays = () => {
     const isMatchingDays = () => checkMatchingDays();
     //set background color days
     const setDayColors = () => {
-        if(isMatchingDays()) {
+        if (isMatchingDays()) {
             return "green";
         } else {
             firstColor = "purple";
@@ -56,9 +56,3 @@ const matchingDays = () => {
         getDayColors
     }
 }
-
-let test1 = matchingDays();
-test1.setFirstDate("25-05-2022")
-test1.setSecondDate("25-05-2022")
-console.log(test1.getFirstDay())
-console.log(test1.getSecondDay())
